@@ -1,0 +1,56 @@
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+
+class AuthRemoteRepository {
+  Future<void> signup({
+    required String name,
+    required String email,
+    required String password,
+  }) async {
+    try {
+      final response = await http.post(
+        Uri.parse('http://10.0.2.2:8000/auth/signup'),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: jsonEncode(
+          {
+            'name': name,
+            'email': email,
+            'password': password,
+          },
+        ),
+      );
+
+      print('Response status: ${response.statusCode}');
+      print('Response body: ${response.body}');
+    } catch (e) {
+      print('Error during signup: $e');
+    }
+  }
+
+  Future<void> login({
+    required String email,
+    required String password,
+  }) async {
+    try {
+      final response = await http.post(
+        Uri.parse('http://10.0.2.2:8000/auth/login'),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: jsonEncode(
+          {
+            'email': email,
+            'password': password,
+          },
+        ),
+      );
+
+      print('Response status: ${response.statusCode}');
+      print('Response body: ${response.body}');
+    } catch (e) {
+      print('Error during login: $e');
+    }
+  }
+}
