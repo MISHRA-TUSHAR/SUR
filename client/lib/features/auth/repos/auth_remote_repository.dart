@@ -63,9 +63,17 @@
 import 'dart:convert';
 import 'package:fpdart/fpdart.dart';
 import 'package:http/http.dart' as http;
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:sur/core/constants/server_constant.dart';
 import 'package:sur/core/failure/failure.dart';
 import 'package:sur/features/auth/model/user_model.dart';
+
+part 'auth_remote_repository.g.dart';
+
+@riverpod
+AuthRemoteRepository authRemoteRepository(AuthRemoteRepositoryRef ref) {
+  return AuthRemoteRepository();
+}
 
 class AuthRemoteRepository {
   Future<Either<AppFailure, UserModel>> signup({
@@ -88,7 +96,7 @@ class AuthRemoteRepository {
         ),
       );
 
-      // Check for valid JSON response
+      // valid JSON response?
       final resBodyMap = jsonDecode(response.body) as Map<String, dynamic>?;
 
       if (resBodyMap == null) {
