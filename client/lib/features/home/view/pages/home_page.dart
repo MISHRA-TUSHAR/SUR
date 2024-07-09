@@ -8,7 +8,13 @@ class HomePage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final user = ref.watch(currentUserNotifierProvider);
-    print(user);
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Home Page'),
+      ),
+      body: Center(
+        child: Text(user.toString()),
+      ),
+    );
   }
 }
