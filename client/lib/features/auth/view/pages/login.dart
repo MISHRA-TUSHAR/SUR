@@ -85,20 +85,18 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                     ),
                     const SizedBox(height: 20),
                     AuthGradientButton(
-                      buttonText: 'Sign in',
-                      onTap: () async {
-                        if (formKey.currentState!.validate()) {
-                          await ref
-                              .read(authViewModelProvider.notifier)
-                              .loginUser(
-                                email: emailController.text,
-                                password: passwordController.text,
-                              );
-                        } else {
-                          showSnackBar(context, 'Missing fields!');
-                        }
-                      },
-                    ),
+                        buttonText: 'Sign in',
+                        onTap: () async {
+                          if (formKey.currentState!.validate()) {
+                            await ref
+                                .read(authViewModelProvider.notifier)
+                                .loginUser(
+                                    email: emailController.text,
+                                    password: passwordController.text);
+                          } else {
+                            showSnackBar(context, 'Please fill all fields');
+                          }
+                        }),
                     const SizedBox(height: 20),
                     GestureDetector(
                       onTap: () {

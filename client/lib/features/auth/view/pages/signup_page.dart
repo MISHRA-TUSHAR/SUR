@@ -31,7 +31,8 @@ class _SignupPageState extends ConsumerState<SignupPage> {
 
   @override
   Widget build(BuildContext context) {
-    final isLoading = ref.watch(authViewModelProvider)?.isLoading == true;
+    final isLoading = ref
+        .watch(authViewModelProvider.select((val) => val?.isLoading == true));
 
     ref.listen(
       authViewModelProvider,
@@ -110,7 +111,7 @@ class _SignupPageState extends ConsumerState<SignupPage> {
                                 password: passwordController.text,
                               );
                         } else {
-                          showSnackBar(context, 'Missing fields!');
+                          showSnackBar(context, 'Please fill all fields');
                         }
                       },
                     ),
