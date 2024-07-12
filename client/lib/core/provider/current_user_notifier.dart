@@ -1,5 +1,5 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:sur/features/auth/model/user_model.dart';
+import 'package:sur/core/model/user_model.dart';
 
 part 'current_user_notifier.g.dart';
 

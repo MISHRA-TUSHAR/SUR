@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:sur/core/constants/server_constant.dart';
 import 'package:sur/core/failure/failure.dart';
-import 'package:sur/features/auth/model/user_model.dart';
+import 'package:sur/core/model/user_model.dart';
 
 part 'auth_remote_repository.g.dart';
 

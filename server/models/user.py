@@ -9,3 +9,5 @@ class User(Base):
     name = Column(VARCHAR(100))
     email = Column(VARCHAR(100))
     password = Column(LargeBinary)
+
+    favorites = relationship('Favorite', back_populates='user')
