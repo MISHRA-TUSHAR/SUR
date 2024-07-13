@@ -25,14 +25,17 @@ This project is a music application built with Flutter using the MVVM (Model-Vie
 
 1. **Clone the repository**
    ```
-   git clone https://github.com/your-username/your-repo.git](https://github.com/MISHRA-TUSHAR/SUR.git
+   git clone https://github.com/MISHRA-TUSHAR/SUR.git
+   
    cd sur
    ```
 
 2. **Create a virtual environment and activate it**
    ```
    python -m venv venv
-   source venv/bin/activate   # On Windows: .\venv\Scripts\activate
+   
+   source venv/bin/activate
+   # On Windows: .\venv\Scripts\activate
    ```
 
   3.**Install dependencies**
