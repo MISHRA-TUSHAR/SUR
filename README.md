@@ -35,7 +35,7 @@ This project is a music application built with Flutter using the MVVM (Model-Vie
    python -m venv venv
    
    source venv/bin/activate
-   # On Windows: .\venv\Scripts\activate
+   # or .\venv\Scripts\activate
    ```
 
   3.**Install dependencies**
